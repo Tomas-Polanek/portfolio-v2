@@ -1,0 +1,105 @@
+# Roadmap: portfolio v2 (Next.js + React + TypeScript + Tailwind)
+
+A new build of my portfolio from scratch. The old site (`../MyWebsite`, plain HTML/CSS/JS) stays as reference for the content.
+Main goal: **learn React** (no previous experience), plus TypeScript and Next.js on the way.
+Working in tutor mode: I write the code myself, guided by questions and hints, not given solutions.
+
+Each phase has a concrete "done when…" test.
+
+---
+
+## PHASE 0 — JS refresher ✅ (done in MyWebsite)
+- [x] DOM basics, events, `classList`, `IntersectionObserver`, clipboard API
+- [x] "Copy email to clipboard" feature written from scratch
+
+## PHASE 1 — Orientation in the project
+- [ ] Run `pnpm dev`, open http://localhost:3000, edit something and see Fast Refresh
+- [ ] Read the generated files: `app/layout.tsx`, `app/page.tsx`, `app/globals.css`, `package.json`, `tsconfig.json`
+- [ ] Understand: what `.tsx` is, what `export default function` does, why `className` and not `class`
+- [ ] Clear out the starter page and write your own "Hello, I'm Tomáš" page
+- **Done when:** you can explain what each file in `app/` does, and the page shows your own text.
+
+## PHASE 2 — TypeScript essentials (just what React needs)
+- [ ] Basic types: `string`, `number`, `boolean`, arrays, objects
+- [ ] `type` vs `interface`, optional props (`?`), union types (`"a" | "b"`)
+- [ ] Reading TS errors in the editor and in `pnpm tsc --noEmit`
+- **Done when:** you write a `Project` type and an array of your projects that type-checks.
+
+## PHASE 3 — React fundamentals: components & props
+- [ ] What a component is (a function that returns JSX)
+- [ ] JSX rules: one root element, `{}` for JS expressions, self-closing tags
+- [ ] Props + typing props with TS
+- [ ] Rendering lists with `.map()` and why `key` is needed
+- [ ] Conditional rendering (`&&`, ternary)
+- **Done when:** your own `ProjectCard` component renders every project from the array.
+
+## PHASE 4 — Project structure
+- [ ] Design the folders (`components/`, `data/`, or another scheme you can justify)
+- [ ] Split the page into sections as components (Hero, About, Projects, Contact, …)
+- [ ] Imports/exports, the `@/` path alias from `tsconfig.json`
+- **Done when:** `app/page.tsx` is short and only puts sections together.
+
+## PHASE 5 — State & interactivity
+- [ ] Server vs Client Components, `"use client"`, and when you need it
+- [ ] `useState`, event handlers (`onClick`)
+- [ ] Rebuild "copy email" as a React component (compare with the old DOM version)
+- [ ] Mobile nav toggle with state
+- **Done when:** both features work, and you can explain why they must be Client Components.
+
+## PHASE 6 — Effects & refs
+- [ ] `useEffect`: what it's for, dependencies, cleanup
+- [ ] `useRef` for access to a DOM element
+- [ ] Rebuild reveal-on-scroll (`IntersectionObserver`) the React way
+- **Done when:** sections animate in on scroll, and the observer is disconnected in cleanup.
+
+## PHASE 7 — Next.js features
+- [ ] `layout.tsx` and the `metadata` export (title, description, OG)
+- [ ] `next/image` and `next/font`
+- [ ] Routing: a page per project (`app/projects/[slug]/page.tsx`)
+- [ ] `<Link>` vs `<a>`
+- **Done when:** every project has its own subpage, and the SEO metadata is correct.
+
+## PHASE 8 — Design with Tailwind
+- [ ] Define the design goals (what's different from the old site, inspiration)
+- [ ] Theme in `globals.css` (`@theme`: colors, fonts)
+- [ ] Responsive layout (`sm:`/`md:`/`lg:`), dark mode
+- **Done when:** the new look is done and works on mobile and desktop.
+
+## PHASE 9 — Content
+- [ ] Move over and update CV info, projects, contact details from `MyWebsite`
+- **Done when:** the content matches reality.
+
+## PHASE 10 — Deployment
+- [ ] `pnpm build`, understand the output
+- [ ] Decide: Vercel vs GitHub Pages (static export)
+- [ ] Point the tomaspolanek.dev domain at the new site
+- **Done when:** the new site is live on tomaspolanek.dev.
+
+---
+
+## Sources
+- **React:** https://react.dev/learn is the official tutorial, written for hooks and function components. Start with "Describing the UI".
+- **Next.js:** the docs for your exact version are in `node_modules/next/dist/docs/01-app/01-getting-started/`. Online docs may already describe a different version.
+- **TypeScript:** https://www.typescriptlang.org/docs/handbook/2/everyday-types.html has all the basic types on one page.
+- **React + TS:** https://react-typescript-cheatsheet.netlify.app is a quick reference for typing props and events.
+- **Tailwind v4:** https://tailwindcss.com/docs. v4 is configured in CSS (`@theme`), not in `tailwind.config.js`.
+
+---
+
+## Session log
+### 2026-09-29
+- Found and turned on tutor mode again (prompt in `../prompt/prompt.txt`).
+- Stack changed from the original plan (TS + Vite) to **Next.js 16 + React 19 + Tailwind 4 + pnpm**. Reason: wants to learn React.
+- Starting point: React = no experience, Tailwind = wants to use it, JS = Phase 0 done, Node v22.20.0, pnpm 12.6.0.
+- Project generated by create-next-app, 1 commit. Made the full plan (phases 0–10).
+- Phase 1 started: dev server runs. Worked out from `page.tsx`, with hints:
+  - `Image` is a component imported from `next/image` (clicked through to `.d.ts` on your own); capital letter = component, lowercase = HTML element
+  - `className` because `class` is a reserved word in JS
+  - `{ }` = JS expression (string, number, …), quotes = plain string
+- Watch out: terminology ("type" vs "element", "keyword" vs "attribute"). Answers are right, but the words used are sometimes loose.
+- `layout.tsx`: `<html>`/`<body>` are in the layout because it wraps all pages; Next.js puts the page into `children` based on the folder in `app/` (file-based routing)
+- Built your own `app/about/page.tsx` (`About` component with `<h1>O mě</h1>`), and it works
+  - Mistakes along the way: unclosed tag, two root elements (fixed with the reasoning "a function returns only one value"), text inside `< >` instead of between the tags, copying a block from the template
+  - **Keeps coming back:** HTML tag syntax (what goes inside `< >` vs. between the tags); saying "done" before saving the file and checking the browser
+- Recommended reading: MDN "Getting started with HTML" → "Anatomy of an HTML element"
+- **Where we left off:** Phase 1 is almost done. Next: clear out the starter `app/page.tsx` and write your own "Hello, I'm Tomáš" homepage (no copying from the template).
