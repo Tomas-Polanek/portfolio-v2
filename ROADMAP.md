@@ -102,4 +102,5 @@ Each phase has a concrete "done when…" test.
   - Mistakes along the way: unclosed tag, two root elements (fixed with the reasoning "a function returns only one value"), text inside `< >` instead of between the tags, copying a block from the template
   - **Keeps coming back:** HTML tag syntax (what goes inside `< >` vs. between the tags); saying "done" before saving the file and checking the browser
 - Recommended reading: MDN "Getting started with HTML" → "Anatomy of an HTML element"
+- Git: committed on `main` first and only then made the branch, so the branch = just a pointer to the current commit (next time: branch first). Fixed `.gitignore` (the `*.AGENTS.md` pattern didn't match `AGENTS.md`), removed the tracked files with `git rm --cached` (kept them on disk), understood the staged/unstaged columns in `git status --short`, committed on `feature/about-me`.
 - **Where we left off:** Phase 1 is almost done. Next: clear out the starter `app/page.tsx` and write your own "Hello, I'm Tomáš" homepage (no copying from the template).
