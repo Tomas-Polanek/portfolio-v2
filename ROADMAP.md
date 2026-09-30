@@ -77,6 +77,24 @@ Each phase has a concrete "done when…" test.
 
 ---
 
+## ANIMATION TRACK (inspiration: joshwcomeau.com)
+Runs alongside the phases above. Every step = its own branch + PR.
+- [ ] **Step 0: CSS animation basics.** `transition` vs `@keyframes`, why `transform`/`opacity`, custom animations in `@theme`
+  - Done when: NavBar links change smoothly on hover and you can explain why.
+- [ ] **Step 1: `Hero` component with intro animation** (`feature/hero`). Staggered fade/slide-in with `animation-delay`, stays a Server Component, `motion-reduce:`
+  - Done when: after a refresh the intro rolls in, and nothing moves with reduced motion.
+- [ ] **Step 2: Section divider** (`feature/section-divider`, after Phase 5). SVG wave/clouds, `viewBox`, `preserveAspectRatio="none"`, `fill` from CSS variables, optional moving layers
+  - Done when: it looks right on mobile and ultra-wide.
+- [ ] **Step 3: Reveal on scroll** (`feature/reveal-on-scroll`, = Phase 6). `"use client"`, `useRef`, `useEffect` + cleanup, `IntersectionObserver`
+  - Done when: sections fade in, and the observer disconnects.
+- [ ] **Step 4: Interactive hero** (`feature/hero-interactive`). Pick an idea (dot grid / letters / blobs). `onPointerMove`, `useRef` vs `useState`, `requestAnimationFrame`, springs through the **Motion** library. Needs a mobile fallback.
+  - Done when: it reacts to the mouse, doesn't break on mobile, and respects `motion-reduce`.
+- [ ] **Step 5: Page transitions** (with Phase 7). React `<ViewTransition>`, `viewTransitionName` on the header. Read the local docs `node_modules/next/dist/docs/01-app/02-guides/view-transitions.md`.
+
+Sources: Josh Comeau "An Interactive Guide to CSS Transitions", "A Friendly Introduction to Spring Physics", "Accessible Animations in React"; MDN `@keyframes`, SVG `viewBox`; Tailwind docs Animation / `motion-reduce`; motion.dev.
+
+---
+
 ## Sources
 - **React:** https://react.dev/learn is the official tutorial, written for hooks and function components. Start with "Describing the UI".
 - **Next.js:** the docs for your exact version are in `node_modules/next/dist/docs/01-app/01-getting-started/`. Online docs may already describe a different version.
@@ -104,3 +122,9 @@ Each phase has a concrete "done when…" test.
 - Recommended reading: MDN "Getting started with HTML" → "Anatomy of an HTML element"
 - Git: committed on `main` first and only then made the branch, so the branch = just a pointer to the current commit (next time: branch first). Fixed `.gitignore` (the `*.AGENTS.md` pattern didn't match `AGENTS.md`), removed the tracked files with `git rm --cached` (kept them on disk), understood the staged/unstaged columns in `git status --short`, committed on `feature/about-me`.
 - **Where we left off:** Phase 1 is almost done. Next: clear out the starter `app/page.tsx` and write your own "Hello, I'm Tomáš" homepage (no copying from the template).
+
+### 2026-09-30
+- Done since the last log: `NavBar` in layout (PR #1 merged), `About` section on branch `feature/about` (pushed, **PR not merged yet**).
+- Went through inspiration: m7mad.dev (Next 14 + framer-motion + SCSS), a list of Next.js portfolios; picked **joshwcomeau.com** (SVG cloud divider, intro/interactive hero, view transitions). Not using the character illustration.
+- Made the **ANIMATION TRACK** (steps 0–5) above.
+- **Where we left off:** merge `feature/about` → start Step 0 + Step 1 on `feature/hero`.
