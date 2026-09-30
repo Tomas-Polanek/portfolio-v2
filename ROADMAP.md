@@ -127,4 +127,12 @@ Sources: Josh Comeau "An Interactive Guide to CSS Transitions", "A Friendly Intr
 - Done since the last log: `NavBar` in layout (PR #1 merged), `About` section on branch `feature/about` (pushed, **PR not merged yet**).
 - Went through inspiration: m7mad.dev (Next 14 + framer-motion + SCSS), a list of Next.js portfolios; picked **joshwcomeau.com** (SVG cloud divider, intro/interactive hero, view transitions). Not using the character illustration.
 - Made the **ANIMATION TRACK** (steps 0–5) above.
-- **Where we left off:** merge `feature/about` → start Step 0 + Step 1 on `feature/hero`.
+- Merged PR #2 (About), turned on auto-delete of branches on GitHub, cleaned up local branches (`git branch -d`, `git fetch --prune`).
+- Animation Step 0: simplified to `transition-colors duration-200` on the NavBar links (done).
+- Picked the **Aurora** design (spec in `~/Downloads/AURORA.md`: dark, violet→teal, glass cards, Inter). Aurora step 1 (colors in `globals.css`) ✅, step 2 (Inter via `next/font/google`, `latin-ext`) ✅.
+- Site language = **English** (`lang="en"`); UI strings translated.
+- Understood: `bg-card` → `@theme inline --color-card` → `:root --card`; `@theme` lines = left side is the Tailwind name, right side is where the value comes from.
+- **Mistakes:** typos in variable names (`--on--accent`, `--font-Geist-mono`: CSS is case-sensitive and fails silently); editing the wrong block or the wrong side of a line; saying "done" before saving the file; unclosed quote in `git commit -m` (`dquote>`, exit with Control+C).
+- Good: split the work into 2 commits by file (`git add <files>`).
+- Time: about 3 h 50 min (17:30–21:20).
+- **Where we left off:** branch `feature/hero`. Next is Aurora step 3: the glows (`.aurora`, `relative isolate`), then step 4 Hero + the intro animation.
