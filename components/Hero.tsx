@@ -3,19 +3,19 @@ export default function Hero() {
     return(
          <section id="hero" className="px-6 py-16 text-center relative isolate">
             <div className="aurora"></div>
-            <p className="inline-block rounded-full border border-border bg-white/5 px-3 py-1 text-sm text-muted">
+            <p className="inline-block rounded-full border border-border bg-white/5 px-3 py-1 text-sm text-muted animate-fade-up motion-reduce:animate-none">
                 Software developer
             </p>
-            <h1 className=" mt-6 text-5xl font-semibold tracking-tighter sm:text-7xl">
+            <h1 className=" mt-6 text-5xl font-semibold tracking-tighter sm:text-7xl animate-fade-up motion-reduce:animate-none [animation-delay:100ms]">
                 Hi, I am{" "}
                 <span className="bg-linear-to-r from-accent to-accent-2 bg-clip-text text-transparent">
                 Tomáš
                 </span>
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-lg text-muted">
+            <p className="mx-auto mt-6 max-w-xl text-lg text-muted animate-fade-up motion-reduce:animate-none [animation-delay:200ms]">
                 I build modern websites with React and Next.js
             </p>
-            <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <div className="mt-10 flex flex-wrap justify-center gap-4 animate-fade-up motion-reduce:animate-none [animation-delay:300ms]">
                 <a 
                 href="#projects"
                 className="rounded-xl bg-linear-to-r from-accent to-accent-2 px-5 py-3 font-semibold text-on-accent transition hover:brightness-110"
