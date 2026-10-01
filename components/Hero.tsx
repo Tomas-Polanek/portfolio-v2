@@ -15,6 +15,20 @@ export default function Hero() {
             <p className="mx-auto mt-6 max-w-xl text-lg text-muted">
                 I build modern websites with React and Next.js
             </p>
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+                <a 
+                href="#projects"
+                className="rounded-xl bg-linear-to-r from-accent to-accent-2 px-5 py-3 font-semibold text-on-accent transition hover:brightness-110"
+                >
+                View projects
+                </a>
+                <a
+                href="#contact"
+                className="rounded-xl border border-border px-5 py-3 font-semibold transition-colors hover:border-muted"
+                >
+                Contact me
+                </a>
+            </div>
          </section>
     );
 }
